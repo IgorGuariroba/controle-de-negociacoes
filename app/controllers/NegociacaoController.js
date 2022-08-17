@@ -5,7 +5,7 @@ class NegociacaoController {
         this._quantidade = $('[data-quantidade]')
         this._valor = $('[data-valor]')
         this._data = $('[data-data]')
-
+        this._listaNegociacoes = new ListaNegociacoes()
         Object.freeze(this)
     }
 
@@ -18,6 +18,8 @@ class NegociacaoController {
             this._valor.value,
         )
 
-        console.log(negotiation);
+        this._listaNegociacoes.adiciona(negotiation)
+
+        console.log(this._listaNegociacoes.negociacoes)
     }
 }
