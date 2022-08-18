@@ -6,6 +6,8 @@ class NegociacaoController {
         this._valor = $('[data-valor]')
         this._data = $('[data-data]')
         this._listaNegociacoes = new ListaNegociacoes()
+        this._negociacoesView = new NegociacoesView($('[data-tabela]'))
+        this._negociacoesView.update()
         Object.freeze(this)
     }
 
