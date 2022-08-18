@@ -4,11 +4,11 @@ class ListaNegociacoes {
         Object.freeze(this)
     }
 
-    adiciona(negociacao){
+    adiciona(negociacao) {
         this._negociacoes.push(negociacao)
     }
 
-    get negociacoes(){
-        return this._negociacoes
+    get negociacoes() {
+        return [].concat(this._negociacoes)
     }
 }
