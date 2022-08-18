@@ -7,14 +7,15 @@ class NegociacaoController {
         this._data = $('[data-data]')
         this._listaNegociacoes = new ListaNegociacoes()
         this._negociacoesView = new NegociacoesView($('[data-tabela]'))
-        this._negociacoesView.update()
+        this._negociacoesView.update(this._listaNegociacoes)
         Object.freeze(this)
     }
 
     adiciona(event) {
         event.preventDefault()
         this._listaNegociacoes.adiciona(this._criaNegociacao())
-
+        this._negociacoesView.update(this._listaNegociacoes)
+        console.log(this._listaNegociacoes)
         this._limpaFormulario()
     }
 
