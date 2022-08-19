@@ -18,10 +18,10 @@ class NegociacoesView {
                     <tbody class="text-center">
                         ${model.negociacoes.map(n => `
                                <tr>
-                               <td>${DateHelper.dataParaFormatStringBr(n.data)}</td>
-                               <td>${n.quantidade}</td>
-                               <td>${n.valor}</td>
-                               <td>${n.volume}</td>
+                               <td>${DateHelper.dataParaFormatStringBr(n.data)}<i class="bi bi-calendar3 ms-3"></i></td>
+                               <td><span class="badge bg-secondary">${n.quantidade}</span></td>
+                               <td>${parseInt(n.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+                               <td>${n.volume.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                                </tr>
                             
                             `).join('')
@@ -29,7 +29,7 @@ class NegociacoesView {
                     </tbody>
                     <tfoot>
                         <td colspan="3">Total</td>
-                        <td>R$ ${model.negociacoes.reduce((total,n) => total + n.volume,0.0)}</td>
+                        <td class="text-center">${model.negociacoes.reduce((total,n) => total + n.volume,0.0).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                     </tfoot>
               </table>
         `
