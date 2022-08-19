@@ -15,7 +15,7 @@ class NegociacaoController {
         event.preventDefault()
         this._listaNegociacoes.adiciona(this._criaNegociacao())
         this._negociacoesView.update(this._listaNegociacoes)
-        console.log(this._listaNegociacoes)
+        Mensagen.printMensagem('Negociação incluida com sucesso!')
         this._limpaFormulario()
     }
 
